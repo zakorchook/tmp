@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:wallet="http://schemas.android.com/apk/res-auto">
+
+    <TextView android:id="@+id/payment_form_title"
+              android:text="@string/addPayment"
+              android:layout_alignParentTop="true"
+
+              style="@style/Header"
+            />
+
+    <fragment android:id="@+id/payment_form"
+              android:layout_below="@id/payment_form_title"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              class="com.tipsi.stripe.upgradestripeandroir.fragment.PaymentFormFragment"/>
+
+    <TextView android:id="@+id/token_list_title"
+              android:text="@string/paymentMethods"
+              android:layout_below="@id/payment_form"
+              android:layout_marginTop="25dp"
+              style="@style/Header"
+            />
+
+    <fragment android:id="@+id/token_list"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:layout_below="@id/token_list_title"
+              class="com.tipsi.stripe.upgradestripeandroir.fragment.TokenListFragment"/>
+
+    <Button
+        android:text="Android Pay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/token_list"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:id="@+id/androidPayButton" />
+
+
+    <!--<fragment-->
+        <!--android:id="@+id/wallet_fragment"-->
+        <!--android:name="com.google.android.gms.wallet.fragment.SupportWalletFragment"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/androidPayButton"-->
+        <!--wallet:environment="test"-->
+        <!--wallet:fragmentMode="buyButton" />-->
+
+</RelativeLayout>
